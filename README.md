@@ -5,4 +5,13 @@
 # User Stories
 
 # As a client
-# I want to
+# I want to open an account with my bank
+
+# As a client
+# My account will be instantiated with a balance of 0
+
+# As a client
+# I want to credit my account by an amount
+
+# As a client
+# I want to debit my account by an amount
