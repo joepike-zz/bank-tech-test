@@ -29,7 +29,7 @@ Account.prototype.record_transaction = function(credit_amount, debit_amount) {
 
 Account.prototype.print_statement = function() {
   for(var i = 0; i < this.record.length; i++) {
-    this.record[i] + "\n"
+    this.record[i] + "\n";
   }
 }
 

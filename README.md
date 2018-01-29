@@ -17,4 +17,10 @@
 # I want to debit my account by an amount
 
 # As a client
-# I want to be able 
+# I want to be able to do multiple transactions
+
+# As a client
+# I want to be able to view the formatted and printed information for a single transaction
+
+# As a client
+# I want to be able to view a printed statement with the history of all my transactions
