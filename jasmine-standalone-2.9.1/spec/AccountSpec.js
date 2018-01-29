@@ -24,9 +24,28 @@ describe("Account", function() {
     })
 
     it("should allow the user to debit an amount from their account", function() {
+      account.credit(1000);
       account.debit(500);
-      expect(account.balance).toEqual(-500)
+      expect(account.balance).toEqual(500)
     })
+
+    it("should allow the user to see the correct balance after multiple transactions", function() {
+      account.credit(1000);
+      account.credit(2000);
+      account.debit(500);
+      expect(account.balance).toEqual(2500)
+    })
+
+    it("should not allow the user to debit an amount they do not have in the account", function() {
+      expect(function() { account.debit(500) }).toThrowError("You do not have enough funds in your account");
+    })
+
+  describe("Transactions record", function() {
+  
+    it("should allow the user to record a transaction", functon() {
+      account.credit(1000);
+    })
+  })
   })
 
 });

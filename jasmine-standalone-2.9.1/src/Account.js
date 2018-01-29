@@ -4,9 +4,28 @@ function Account() {
 
 Account.prototype.credit = function(amount) {
   this.balance += amount;
-  // possibly add a private method for changing balance
 }
 
 Account.prototype.debit = function(amount) {
-  this.balance -= amount;
+  if(this.balance - amount < 0) {
+    throw new Error("You do not have enough funds in your account")
+  } else {
+    this.balance -= amount;
+  }
 }
+
+Account.prototype = (function() {
+    var private_stuff = function() {
+        // Private code here
+    };
+
+    return {
+
+        constructor:Account,
+
+        use_restroom:function() {
+            private_stuff();
+        }
+
+    };
+})();
