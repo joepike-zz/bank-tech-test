@@ -40,12 +40,27 @@ describe("Account", function() {
       expect(function() { account.debit(500) }).toThrowError("You do not have enough funds in your account");
     })
 
-  describe("Transactions record", function() {
-  
-    it("should allow the user to record a transaction", functon() {
-      account.credit(1000);
-    })
   })
+
+  describe("Transactions record", function() {
+
+    it("should allow the user to record a credit transaction", function() {
+      account.credit(1000);
+      expect(account.record[1]).toEqual("29/01/2018 || 1000 || || 1000");
+    })
+
+    it("should allow the user to record a debit transaction", function() {
+      account.credit(1000);
+      account.debit(500);
+      expect(account.record[2]).toEqual("29/01/2018 || || 500 || 500");
+    })
+
+    it("should show a history of transactions", function() {
+      account.credit(1000);
+      account.debit(500);
+      expect(account.record[1]).toEqual("29/01/2018 || 1000 || || 1000");
+      expect(account.record[2]).toEqual("29/01/2018 || || 500 || 500");
+    })
   })
 
 });
